@@ -12,24 +12,28 @@
   <body>
     <div class="left padding20"><p>teasdasdsadsdxt</p></div>
     <div class="simcir">
-        {
-          "width":1000,
-          "height":400,
-          "showToolbox":true,
-          "toolbox":[
+      {
+        "width":1000,
+        "height":400,
+        "showToolbox":true,
+        "toolbox":[
           {"type":"NAND"},
+          {"type":"DC"},
           {"type":"AND"},
           {"type":"LED"},
           {"type":"Toggle"}
-          ],
-          "devices":[
-          {"id":"input","label":"In","type":"In","x":304,"y":8},
-          {"type":"Out","id":"output","x":304,"y":352,"label":"Out"}
-          ],
-          "connectors":[
-            
-          ]
-        }
+        ],
+        "devices":[
+          {"id":"dev0","label":"In","type":"In","x":248,"y":352},
+          {"type":"Out","id":"dev1","x":304,"y":8,"label":"Out"},
+          {"type":"DC","id":"dev2","x":192,"y":352,"label":"DC"},
+          {"type":"Toggle","id":"dev3","x":304,"y":352,"label":"Switch","state":{"on":true}}
+        ],
+        "connectors":[
+          {"from":"dev0.in0","to":"dev2.out0"},
+          {"from":"dev3.in0","to":"dev0.out0"}
+        ]
+      }
     
     </div>
   </body>
